@@ -7,7 +7,7 @@ class BelahKetupatController extends GetxController{
   final angka="".obs;
 
   void hitungLuas(){
-    double hitung = 1/2 * d1 * d2;
+    num hitung = 1/2 * d1 * d2;
     hasil.value = "Hasil Perhitungan luas dari Belah Ketupat adalah $hitung";
     angka.value ="$hitung";
   }

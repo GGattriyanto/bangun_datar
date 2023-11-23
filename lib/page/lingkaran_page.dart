@@ -1,12 +1,11 @@
 import 'package:bangun_datar_kelas_c/controller/lingkaran_controller.dart';
-import 'package:bangun_datar_kelas_c/controller/persegi_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LingkaranPage extends StatelessWidget {
   LingkaranPage({super.key});
 
-  final LingkaranController _persegiController = Get.put(PersegiController());
+  final LingkaranController _lingkaranController = Get.put(LingkaranController());
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class LingkaranPage extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            " Persegi page",
+            " Lingkaran page",
             style: TextStyle(color: Color(0xFFFFFFFF)),
           ),
           backgroundColor: Colors.green.shade300,
@@ -22,12 +21,12 @@ class LingkaranPage extends StatelessWidget {
         body: ListView(
           children: [
             Image.asset(
-              "assets/persegi.jpg",
+              "assets/lingkaran.png",
               width: 200,
               height: 200,
             ),
             Padding(
-                padding: const EdgeInsets.all(8.0), child: Text("Persegi")),
+                padding: const EdgeInsets.all(8.0), child: Text("Lingkaran")),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -35,7 +34,7 @@ class LingkaranPage extends StatelessWidget {
                   color: Colors.green.shade400,
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               child: Text(
-                  "Persegi adalah turunan dari segi empat yang mempunyai ciri khusus keempat sisinya sama panjang dan keempat sudutnya siku-siku (90°)."),
+                  "Lingkaran adalah tempat kedudukan titik-titik yang berjarak sama dengan satu titik tertentu."),
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -51,7 +50,7 @@ class LingkaranPage extends StatelessWidget {
                       width: 150,
                       child: TextFormField(
                         onChanged: (String value) {
-                          _persegiController.sisi = int.parse(value);
+                          _lingkaranController.r = int.parse(value);
                         },
 
                         decoration: InputDecoration(
@@ -91,7 +90,7 @@ class LingkaranPage extends StatelessWidget {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(primary: Colors.black38),
                             onPressed: () {
-                              _persegiController.hitungKeliling();
+                              _lingkaranController.hitungKeliling();
                             },
                             child: Text(
                               "Hitung Keliling",
@@ -103,7 +102,7 @@ class LingkaranPage extends StatelessWidget {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(primary: Colors.yellow),
                             onPressed: () {
-                              _persegiController.hitungLuas();
+                              _lingkaranController.hitungLuas();
                             },
                             child: Text(
                               "Hitung Luas",
@@ -112,8 +111,6 @@ class LingkaranPage extends StatelessWidget {
                       )
                     ],
                   ),
-
-
                 ],
               ),
             ),
@@ -131,19 +128,17 @@ class LingkaranPage extends StatelessWidget {
                       fontSize: 20,
                       fontWeight: FontWeight.bold
                   )),
-                  Obx(() => Text(_persegiController.angka.value,textAlign: TextAlign.center, style: TextStyle(
+                  Obx(() => Text(_lingkaranController.angka.value,textAlign: TextAlign.center, style: TextStyle(
                       color: Colors.white,
                       fontSize: 75,
                       fontWeight: FontWeight.bold
                   ),)),
-                  Obx(() => Text(_persegiController.hasil.value, textAlign: TextAlign.center, style: TextStyle(
+                  Obx(() => Text(_lingkaranController.hasil.value, textAlign: TextAlign.center, style: TextStyle(
                       color: Colors.white,
                       fontSize: 16),)),
                 ],
               ),
             ),
-
-
           ],
         ));
   }

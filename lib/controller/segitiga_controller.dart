@@ -8,7 +8,7 @@ class SegitigaController extends GetxController{
   final angka="".obs;
 
   void hitungLuas(){
-    double hitung = (1/2 * alas * tinggi) ;
+    num hitung = (1/2 * alas * tinggi) ;
     hasil.value = "Hasil Perhitungan luas dari Segitiga adalah $hitung";
     angka.value ="$hitung";
   }

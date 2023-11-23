@@ -1,4 +1,5 @@
 import 'package:bangun_datar_kelas_c/page/belahketupat_page.dart';
+import 'package:bangun_datar_kelas_c/page/lingkaran_page.dart';
 import 'package:bangun_datar_kelas_c/page/persegi_page.dart';
 import 'package:bangun_datar_kelas_c/page/segitiga_page.dart';
 import 'package:flutter/material.dart';
@@ -52,10 +53,16 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
+                    child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => LingkaranPage()));
+                          },
                     child: CustomMenu(
                   title: "Lingkaran",
                   imageAsset: "assets/lingkaran.png",
-                )),
+                ))),
                 Expanded(
                     child: InkWell(
                         onTap: () {

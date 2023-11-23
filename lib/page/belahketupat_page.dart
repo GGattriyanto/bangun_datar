@@ -1,5 +1,4 @@
 import 'package:bangun_datar_kelas_c/controller/belahketupat_controller.dart';
-import 'package:bangun_datar_kelas_c/controller/persegi_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +34,7 @@ class BelahketupatPage extends StatelessWidget {
                   color: Colors.green.shade400,
                   borderRadius: BorderRadius.all(Radius.circular(8))),
               child: Text(
-                  "Persegi adalah turunan dari segi empat yang mempunyai ciri khusus keempat sisinya sama panjang dan keempat sudutnya siku-siku (90°)."),
+                  "Belah ketupat adalah bangun datar dua dimensi yang dibentuk oleh empat buah segitiga siku siku masing-masing sama besar dengan sudut di hadapannya"),
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
